@@ -19,13 +19,13 @@ library
   other-modules:       Parser
   build-depends:       base
 
-executable stringcalculator
+executable string-calculator
   import:              shared-properties
   hs-source-dirs:      app
   main-is:             Main.hs
   build-depends:       base, string-calculator
 
-test-suite stringcalculator-test
+test-suite string-calculator-test
   import:              shared-properties
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
