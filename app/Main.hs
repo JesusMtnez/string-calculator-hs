@@ -1,6 +1,6 @@
 module Main where
 
-import StringCalculator
+import           StringCalculator
 
 main :: IO ()
 main = interact $ maybe "There was a problem" show . add

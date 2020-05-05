@@ -1,8 +1,8 @@
 module StringCalculatorSpec where
 
-import Test.Hspec
-import Test.QuickCheck
-import StringCalculator
+import           StringCalculator
+import           Test.Hspec
+import           Test.QuickCheck
 
 spec :: Spec
 spec = do

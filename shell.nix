@@ -7,6 +7,7 @@ pkgs.mkShell {
     pkgs.haskell.compiler.ghc865
     pkgs.haskellPackages.cabal-install
     pkgs.haskellPackages.hlint
+    pkgs.haskellPackages.stylish-haskell
     pkgs.cabal2nix
     ghcide.ghcide-ghc865
   ];

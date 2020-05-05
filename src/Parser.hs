@@ -1,9 +1,9 @@
 module Parser where
 
-import           Data.Char
-import           Data.Bifunctor
-import           Data.Tuple
 import           Control.Applicative
+import           Data.Bifunctor
+import           Data.Char
+import           Data.Tuple
 
 newtype Parser a = Parser { runParser :: String -> Maybe (String, a) }
 
