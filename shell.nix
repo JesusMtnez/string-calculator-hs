@@ -6,6 +6,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.haskell.compiler.ghc865
     pkgs.haskellPackages.cabal-install
+    pkgs.haskellPackages.hlint
     pkgs.cabal2nix
     ghcide.ghcide-ghc865
   ];
