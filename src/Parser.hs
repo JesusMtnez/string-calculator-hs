@@ -10,9 +10,17 @@ newtype Parser a = Parser { runParser :: String -> Maybe (String, a) }
 instance Functor Parser where
   fmap f (Parser p) = Parser $ fmap (second f) . p
 
--- instance Applicative Parser where
+instance Applicative Parser where
+  pure a = Parser $ \x -> Just (x, a)
+  (Parser p1) <*> (Parser p2) = Parser $ \input -> do
+    (input', f) <- p1 input
+    (input'', b) <- p2 input'
+    return (input'', f b)
 
--- instance Alternative Parser where
+instance Alternative Parser where
+  empty = Parser $ const Nothing
+  (Parser p1) <|> (Parser p2) = Parser $ \input ->
+    p1 input <|> p2 input
 
 stringCalculatorParser :: Parser [Int]
 stringCalculatorParser = undefined
