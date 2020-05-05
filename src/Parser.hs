@@ -49,11 +49,4 @@ sepBy :: Parser a -> Parser b -> Parser [b]
 sepBy p1 p2 = undefined
 
 charP :: Char -> Parser Char
-charP c = Parser f
-  where
-    f :: String -> Maybe (String, Char)
-    f [] =  Nothing
-    f (x : xs) | x == c = Just (xs, x)
-               | otherwise = Nothing
-
--- ifP (_ == c)
+charP c = ifP  (== c)
